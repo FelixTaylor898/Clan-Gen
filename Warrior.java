@@ -1,31 +1,28 @@
 import java.util.Random;
-
 public class Warrior extends Cat {
-    Warrior apprentice = null;
+    // A warrior is any cat who can have an apprentice
+    // this includes medicine cats
+    Cat apprentice = null;
     public Warrior() {
         super();
-        int chance = new Random().nextInt(3);
+        // 25% chance of having an apprentice
+        int chance = new Random().nextInt(4);
         if (chance == 0) {
-            apprentice = new Warrior("paw");
-            apprentices.add(apprentice);
+            apprentice = new Cat("paw");
         }
     }
 
-    public Warrior(String suffix) {
-        super(suffix);
-    }
-    public void printCat() {
-        super.printCat();
-        if (apprentice != null) {
-            System.out.println("\tApprentice: " + apprentice.getName());
-        }
+    public boolean hasApprentice() {
+        return apprentice != null;
     }
 
-    public void printCat(boolean med) {
-        super.printCat();
-        if (apprentice != null) {
-            System.out.print("\tApprentice: ");
-            apprentice.printCat();
+    public Cat getApprentice() {
+        return apprentice;
+    }
+
+    public void printApprentice() {
+        if (hasApprentice()) {
+            System.out.println("Apprentice: " + apprentice.getName());
         }
     }
 }

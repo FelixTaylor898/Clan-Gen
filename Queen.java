@@ -2,28 +2,35 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class Queen extends Cat {
+
+    ArrayList<Cat> kits = new ArrayList<>();
     
     public Queen() {
         super();
         gender = "she-cat";
-        int kitC = new Random().nextInt(4);
-        kits.put(this, new ArrayList<Cat>());
-        while (kitC > 0) {
-            kits.get(this).add(new Cat("kit"));
-            kitC--;
+        // Between 0 and 2 kits
+        int kitC = new Random().nextInt(3);
+        for (int k = 0; k < kitC; k++) {
+            kits.add(new Cat("kit"));
         }
     }
-    public void printCat() {
-        super.printCat();
-        System.out.print("\tKits: ");
-        ArrayList<Cat> myKits = kits.get(this);
-        if (myKits.size() == 0) {
-            System.out.println("None");
-        }
-        for (int k = 0; k < myKits.size(); k++) {
-            System.out.print(myKits.get(k).getName());
-            if (k + 1 < myKits.size()) System.out.print(", ");
-            else System.out.println();
+
+    public boolean hasKits() {
+        return kits.size() > 0;
+    }
+
+    public ArrayList<Cat> getKits() {
+        return kits;
+    }
+
+    public void printKits() {
+        if (hasKits()) {
+            System.out.print("Kits: ");
+            for (int k = 0; k < kits.size(); k++) {
+                System.out.print(kits.get(k).getName());
+                if (k + 1 < kits.size()) System.out.print(", ");
+            }
+            System.out.println();
         }
     }
 }

@@ -1,9 +1,6 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Scanner;
 import java.util.Set;
 
@@ -14,9 +11,6 @@ public interface Sets {
     Set<String> suffRemoved = new HashSet<>();
     Set<String> furs = new HashSet<>();
     Set<String> eyes = new HashSet<>();
-    ArrayList<Warrior> apprentices = new ArrayList<>();
-    Map<Queen, ArrayList<Cat>> kits = new HashMap<>();
-
 
     static void restoreSets() {
         for (String pre : preRemoved) {
@@ -27,8 +21,6 @@ public interface Sets {
         }
         preRemoved.clear();
         suffRemoved.clear();
-        apprentices.clear();
-        kits.clear();
     }
 
     static void createSets() {
