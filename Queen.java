@@ -24,13 +24,18 @@ public class Queen extends Cat {
     }
 
     public void printKits() {
+        System.out.print(getKitsString());
+    }
+
+    public String getKitsString() {
+        String result = "";
         if (hasKits()) {
-            System.out.print("Kits: ");
+            result += "\nKits: ";
             for (int k = 0; k < kits.size(); k++) {
-                System.out.print(kits.get(k).getName());
-                if (k + 1 < kits.size()) System.out.print(", ");
+                result += kits.get(k).getName();
+                if (k + 1 < kits.size()) result += ", ";
             }
-            System.out.println();
         }
+        return result;
     }
 }

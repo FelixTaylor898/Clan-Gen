@@ -54,12 +54,6 @@ class Cat implements Sets {
         return name;
     }
 
-    // Prints cat properties
-    public void printCat() {
-        // ex: Fireheart - ginger tabby tom with green eyes
-        System.out.println(name + " - " + fur + " " + gender + " with " + eye + " eyes");
-    }
-
     public String getDesc() {
         return name + " - " + fur + " " + gender + " with " + eye + " eyes";
     }
@@ -71,7 +65,7 @@ class Cat implements Sets {
         return "long-haired ";
     }
 
-    public static String genEyes() {
+    private static String genEyes() {
         int num = new Random().nextInt(eyes.size());
         int i = 0;
         for (String eye: eyes) {
@@ -83,7 +77,7 @@ class Cat implements Sets {
         return "green";
     }
 
-    public static String genFur(String gender) {
+    private static String genFur(String gender) {
         int i = 0;
         int num = new Random().nextInt(furs.size());
         for (String fur: furs) {

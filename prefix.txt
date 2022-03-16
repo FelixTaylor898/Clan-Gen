@@ -704,7 +704,6 @@ Violet
 Viridian
 Wheat
 White
-Wine
 Wisteria
 Yam
 Yellow

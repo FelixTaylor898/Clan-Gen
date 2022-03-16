@@ -25,4 +25,14 @@ public class Warrior extends Cat {
             System.out.println("Apprentice: " + apprentice.getName());
         }
     }
+
+    public String getApprenticeString() {
+        if (!hasApprentice()) return "";
+        return "\nApprentice: " + apprentice.getDesc();
+    }
+
+    public String getApprenticeName() {
+        if (!hasApprentice()) return "";
+        return "\nApprentice: " + apprentice.getName();
+    }
 }

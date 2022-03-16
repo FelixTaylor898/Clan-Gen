@@ -9,6 +9,7 @@ public class Clan implements Sets {
     ArrayList<Warrior> warriors;
     ArrayList<Queen> queens;
     ArrayList<Cat> elders;
+    String fullString;
 
     public Clan() {
         Random rand = new Random();
@@ -32,51 +33,78 @@ public class Clan implements Sets {
         for (int k = 0; k < elderCount; k++)
             elders.add(new Cat());
         Sets.restoreSets();
+        fullString = buildString();
     }
 
-    public void printClan() {
-        System.out.println(name + "Clan");
-        System.out.println("\nLeader: " + leader.getDesc());
-        System.out.println("\nDeputy: " + deputy.getDesc());
-        System.out.println("\nMedicine Cat: " + med.getDesc());
-        if (med.hasApprentice())
-            System.out.println("Apprentice: " + med.getApprentice().getDesc());
-        System.out.println("\nWarriors");
+    public String toString() {
+        return fullString;
+    }
+
+    private String buildString() {
+        return name + "Clan" + "\n\nLeader: " + leader.getDesc() +
+            "\n\nDeputy: " + deputy.getDesc() + 
+            "\n\nMedicine Cat: " + med.getDesc() + med.getApprenticeString() +
+            getWarriorsString()  + getApprenticeString() + buildQueenString() +
+            buildKitString() + buildElderString();
+    }
+
+    private String getWarriorsString() {
+        String result = "\n\nWarriors";
         for (Warrior warrior : warriors) {
-            warrior.printCat();
-            warrior.printApprentice();
+            result += "\n" + warrior.getDesc() + warrior.getApprenticeName();
         }
-        System.out.println("\nApprentices");
+        return result;
+    }
+
+    private String getApprenticeString() {
+        String result = "\n\nApprentices";
         boolean appt = false;
         for (Warrior warrior : warriors) {
             if (warrior.hasApprentice()) {
                 appt = true;
-                System.out.println(warrior.getApprentice().getDesc());
+                result += "\n" + warrior.getApprentice().getDesc();
             }
         }
-        if (!appt)
-            System.out.println("None");
-        System.out.println("\nQueens");
-        for (Queen queen : queens) {
-            queen.printCat();
-            queen.printKits();
+        if (!appt) {
+            result += "\nNone";
         }
-        System.out.println("\nElders");
-        for (Cat elder : elders) {
-            elder.printCat();
+        return result;
+    }
+
+    private String buildQueenString() {
+        String result = "\n\nQueens";
+        if (queens.size() == 0) {
+            result += "\nNone";
+        } else {
+            for (Queen queen : queens) {
+                result += "\n" + queen.getDesc() + queen.getKitsString();
+            }
         }
-        if (elders.size() == 0) {
-            System.out.println("None");
-        }
-        System.out.println("\nKits");
-        boolean haveKits = false;
+        return result;
+    }
+
+    private String buildKitString() {
+        String result = "\n\nKits";
+        boolean kits = false;
         for (Queen queen : queens) {
             for (Cat kit : queen.getKits()) {
-                haveKits = true;
-                kit.printCat();
+                kits = true;
+                result += "\n" + kit.getDesc();
             }
         }
-        if (!haveKits) System.out.println("None");
+        if (!kits) result += "\nNone";
+        return result;
     }
-    
+
+    private String buildElderString() {
+        String result = "\n\nElders";
+        if (elders.size() == 0) {
+            result += "\nNone";
+        } else {
+            for (Cat elder : elders) {
+                result += "\n" + elder.getDesc();
+            }
+        }
+        return result;
+    }  
 }
