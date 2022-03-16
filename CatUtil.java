@@ -1,7 +1,8 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Set;
 
-public class CatUtil implements Sets{
+public class CatUtil implements Sets {
     public static String genNamePart(Set<String> names) {
         int i = 0;
         int num = new Random().nextInt(names.size());
@@ -21,6 +22,18 @@ public class CatUtil implements Sets{
         return "long-haired ";
     }
 
+    public static String genEyes() {
+        int num = new Random().nextInt(eyes.size());
+        int i = 0;
+        for (String eye : eyes) {
+            if (num == i) {
+                return eye;
+            }
+            i++;
+        }
+        return "green";
+    }
+
     public static String genFur(String gender) {
         int i = 0;
         int num = new Random().nextInt(furs.size());
@@ -36,7 +49,6 @@ public class CatUtil implements Sets{
     }
 
     public static void printClan() {
-        apprentices.clear();
         String clan = genNamePart(prefix);
         System.out.println(clan + "Clan\n");
         System.out.print("Leader: ");
@@ -68,6 +80,15 @@ public class CatUtil implements Sets{
             new Queen().printCat();
             queens--;
         }
+        System.out.println("\nKits");
+        if (kits.size() == 0) System.out.println("None");
+        for (ArrayList<Cat> kits : kits.values()) {
+            for (Cat kit : kits) {
+                kit.printCat();
+            }
+        }
+
+
         System.out.println("\nElders");
         int elders = new Random().nextInt(5);
         if (elders == 0) System.out.println("None");
@@ -75,14 +96,7 @@ public class CatUtil implements Sets{
             new Cat().printCat();
             elders--;
         }
-        for (String pre : preRemoved) {
-            prefix.add(pre);
-        }
-        for (String suff : suffRemoved) {
-            suffix.add(suff);
-        }
-        preRemoved.clear();
-        suffRemoved.clear();
+        Sets.restoreSets();
     }
     
 }

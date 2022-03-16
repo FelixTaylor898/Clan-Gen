@@ -550,7 +550,6 @@ Nickel
 Night
 Noise
 Noon
-North
 Nurture
 Oak
 Oat
@@ -643,11 +642,9 @@ Clematis
 Daffodil
 Dahlia
 Daphne
-Denom
 Durian
 Fig
 Garnet
-Greige
 Guava
 Mahogany
 Mauve
@@ -814,7 +811,6 @@ Solar
 Song
 Soot
 Sound
-South
 Soy
 Space
 Spark
@@ -942,8 +938,6 @@ Weasel
 Moor
 Weather
 Web
-Weed
-West
 Whale
 Angry
 Whirl
@@ -986,7 +980,6 @@ Flax
 Fleet
 Freckle
 Fringe
-Full
 Fuzzy
 Golden
 Hatch

@@ -1,0 +1,21 @@
+green
+blue
+amber
+hazel
+yellow
+gold
+red
+dark blue
+dark green
+dark gold
+dark hazel
+dark red
+dark amber
+dark yellow
+light green
+light blue
+light amber
+light hazel
+light yellow
+light gold
+light red
