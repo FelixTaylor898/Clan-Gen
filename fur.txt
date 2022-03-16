@@ -1,0 +1,48 @@
+cream tabby
+ginger tabby
+dark-ginger tabby
+dark gray
+gray
+light gray
+dark gray tabby
+gray tabby
+light gray tabby
+white
+black
+black tabby
+brown
+light brown
+dark brown
+brown tabby
+light brown tabby
+dark brown tabby
+cream-and-white tabby
+ginger-and-white tabby
+dark ginger-and-white tabby
+dark gray-and-white
+gray-and-white
+light gray-and-white
+dark gray-and-white tabby
+gray-and-white tabby
+light gray-and-white tabby
+white
+black-and-white
+black-and-white tabby
+brown-and-white
+light brown-and-white
+dark brown-and-white
+brown-and-white tabby
+light brown-and-white tabby
+dark brown-and-white tabby
+ginger tortoiseshell
+dark ginger tortoiseshell
+cream tortoiseshell
+ginger tortoiseshell-and-white
+dark ginger tortoiseshell-and-white
+cream tortoiseshell-and-white
+ginger calico
+dark ginger calico
+cream calico
+ginger calico-and-white
+cream calico-and-white
+dark ginger calico-and-white
