@@ -9,17 +9,22 @@ public class Clan implements Sets {
     ArrayList<Warrior> warriors;
     ArrayList<Queen> queens;
     ArrayList<Cat> elders;
-    String fullString;
+    String fullString; // full description of all the cats in the clan
 
     public Clan() {
         Random rand = new Random();
         name = Util.genRandomWord(prefix);
-        leader = new Warrior("star");
+        leader = new Warrior("star"); // eg Firestar
         deputy = new Warrior();
         med = new Warrior();
+        // med cat not added to warrior list because
+        // apprentice is not included in apprentice list
         warriors = new ArrayList<>();
+        // add to warrior list so apprentices can be included
         warriors.add(leader);
         warriors.add(deputy);
+        // cannot have apprentices
+        // queens have kits
         queens = new ArrayList<>();
         elders = new ArrayList<>();
         // 5 to 10 warriors possible
@@ -34,14 +39,21 @@ public class Clan implements Sets {
         int elderCount = rand.nextInt(4);
         for (int k = 0; k < elderCount; k++)
             elders.add(new Cat());
-        Sets.restoreSets();
-        fullString = buildString();
+        Sets.restoreSets(); // readd names that were removed
+        // from the prefix and suffix sets
+        fullString = buildString(); // generate clan description
     }
 
+    /**
+     * @return String - the full desciption of the clan
+     */
     public String toString() {
         return fullString;
     }
 
+    /**
+     * @return String - generate the full description of the clan
+     */
     private String buildString() {
         return name + "Clan" + "\nLeader: " + leader.toString() + leader.getApprenticeName() +
                 "\nDeputy: " + deputy.toString() + deputy.getApprenticeName() +
@@ -50,6 +62,9 @@ public class Clan implements Sets {
                 buildKitString() + buildElderString();
     }
 
+    /**
+     * @return String - the full list of all warriors in the clan, plus their apprentices
+     */
     private String getWarriorsString() {
         String result = "\n\nWarriors";
         for (int k = 2; k < warriors.size(); k++)
@@ -57,6 +72,9 @@ public class Clan implements Sets {
         return result;
     }
 
+    /**
+     * @return String - the list of all apprentices in the clan, except the med cat
+     */
     private String getApprenticeString() {
         String result = "\n\nApprentices";
         boolean appt = false;
@@ -72,6 +90,9 @@ public class Clan implements Sets {
         return result;
     }
 
+    /**
+     * @return String - all queens and the names of their kits
+     */
     private String buildQueenString() {
         String result = "\n\nQueens";
         if (queens.size() == 0) {
@@ -84,6 +105,9 @@ public class Clan implements Sets {
         return result;
     }
 
+    /**
+     * @return String - all the kits in the clan
+     */
     private String buildKitString() {
         String result = "\n\nKits";
         boolean kits = false;
@@ -98,6 +122,9 @@ public class Clan implements Sets {
         return result;
     }
 
+    /**
+     * @return String - all the elders in the clan
+     */
     private String buildElderString() {
         String result = "\n\nElders";
         if (elders.size() == 0) {

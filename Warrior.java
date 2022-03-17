@@ -1,12 +1,11 @@
 import java.util.Random;
-
+/*
+ * @Author: Felix Taylor
+ * @Description: Warrior class - a cat who can have an apprentice
+ */
 public class Warrior extends Cat {
-    // A warrior is any cat who can have an apprentice
-    // this includes medicine cats, leaders, deputies
     Cat apprentice = null;
 
-    // warriors, deputies, medicine cats
-    // all use this constructor
     public Warrior() {
         super();
         genApprentice();
@@ -24,39 +23,41 @@ public class Warrior extends Cat {
     private void genApprentice() {
         // 25% chance of having an apprentice
         int chance = new Random().nextInt(4);
-        if (chance == 0) {
-            // all apprentices have the paw
-            // suffix
+        if (chance == 0) // all apprentices are "paw"
             apprentice = new Cat("paw");
-        }
     }
 
-    // check if this warrior has an apprentice
+    /** 
+     * @return boolean - whether or not this warrior has an apprentice
+     */
     public boolean hasApprentice() {
         return apprentice != null;
     }
 
+    /** 
+     * @return Cat - apprentice
+     */
     public Cat getApprentice() {
         return apprentice;
     }
-
-    // this is only for the medicine cat
-    // because medicine cat apprentices
-    // do not show up in the apprentice list
+    
+    /** 
+     * @return ex: Apprentice: Jaypaw - gray tabby tom with blue eyes
+     * This is for the med cat apprentice, because they are displayed separately
+     * from the other apprentices
+     */
     public String getApprenticeString() {
         if (!hasApprentice())
             return "";
-        // ex: Apprentice: Jaypaw - gray tabby tom with blue eyes
         return "\n\tApprentice: " + apprentice.toString();
     }
 
-    // for all apprentices of leaders, deputies, and warriors
-    // only display's the apprentice's name
-    // because the full description is in the apprentice list
+    /** 
+     * @return String - eg Apprentice: Sandpaw
+     */
     public String getApprenticeName() {
         if (!hasApprentice())
             return "";
-        // ex: Apprentice: Sandpaw
         return "\n\tApprentice: " + apprentice.getName();
     }
 }
