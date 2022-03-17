@@ -864,7 +864,6 @@ Talon
 Tangle
 Tansy
 Tapir
-Taste
 Taunt
 Tender
 Termite
@@ -989,7 +988,6 @@ Itter
 Jagged
 Kink
 Long
-Low
 Misty
 Mottle
 Nut

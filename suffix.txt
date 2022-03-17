@@ -29,8 +29,10 @@ snow
 pond
 rabbit
 squirrel
+bramble
 climb
 blossom
+hound
 branch
 breeze
 bite
@@ -114,6 +116,7 @@ haze
 leer
 heart
 ice
+flick
 jaw
 leaf
 leap
@@ -173,6 +176,7 @@ rapid
 rage
 glide
 snout
+fuzz
 canyon
 story
 rose
@@ -180,6 +184,7 @@ fury
 rise
 mist
 dew
+glow
 snow
 song
 spark
@@ -210,6 +215,7 @@ thorn
 throat
 creak
 toe
+moth
 noon
 quiver
 dove

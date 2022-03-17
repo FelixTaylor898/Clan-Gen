@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Clan implements Sets {
     String name;
-    Cat leader;
-    Cat deputy;
+    Warrior leader;
+    Warrior deputy;
     Warrior med;
     ArrayList<Warrior> warriors;
     ArrayList<Queen> queens;
@@ -13,19 +13,21 @@ public class Clan implements Sets {
 
     public Clan() {
         Random rand = new Random();
-        name = Util.genNamePart(prefix);
-        leader = new Cat("star");
-        deputy = new Cat();
+        name = Util.genRandomWord(prefix);
+        leader = new Warrior("star");
+        deputy = new Warrior();
         med = new Warrior();
         warriors = new ArrayList<>();
+        warriors.add(leader);
+        warriors.add(deputy);
         queens = new ArrayList<>();
         elders = new ArrayList<>();
-        // 5 to 8 warriors possible
+        // 5 to 10 warriors possible
         int warCount = 5 + rand.nextInt(6);
         for (int k = 0; k < warCount; k++)
             warriors.add(new Warrior());
-        // 0 to 2 queens possible
-        int queenCount = rand.nextInt(3);
+        // 0 to 3 queens possible
+        int queenCount = rand.nextInt(4);
         for (int k = 0; k < queenCount; k++)
             queens.add(new Queen());
         // 0 to 3 elders possible
@@ -41,8 +43,8 @@ public class Clan implements Sets {
     }
 
     private String buildString() {
-        return name + "Clan" + "\nLeader: " + leader.toString() +
-                "\nDeputy: " + deputy.toString() +
+        return name + "Clan" + "\nLeader: " + leader.toString() + leader.getApprenticeName() +
+                "\nDeputy: " + deputy.toString() + deputy.getApprenticeName() +
                 "\nMedicine Cat: " + med.toString() + med.getApprenticeString() +
                 getWarriorsString() + getApprenticeString() + buildQueenString() +
                 buildKitString() + buildElderString();
@@ -50,8 +52,8 @@ public class Clan implements Sets {
 
     private String getWarriorsString() {
         String result = "\n\nWarriors";
-        for (Warrior warrior : warriors)
-            result += "\n" + warrior.toString() + warrior.getApprenticeName();
+        for (int k = 2; k < warriors.size(); k++)
+            result += "\n" + warriors.get(k).toString() + warriors.get(k).getApprenticeName();
         return result;
     }
 

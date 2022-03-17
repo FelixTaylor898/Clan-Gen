@@ -8,8 +8,9 @@ public class Queen extends Cat {
     public Queen() {
         super();
         gender = "she-cat";
-        // Between 0 and 2 kits
-        int kitC = new Random().nextInt(3);
+        desc = desc.replaceAll("tom", "she-cat");
+        // Between 0 and 3 kits
+        int kitC = new Random().nextInt(4);
         for (int k = 0; k < kitC; k++) {
             kits.add(new Cat("kit"));
         }
@@ -30,7 +31,7 @@ public class Queen extends Cat {
     public String getKitsString() {
         String result = "";
         if (hasKits()) {
-            result += "\nKits: ";
+            result += "\n\tKits: ";
             for (int k = 0; k < kits.size(); k++) {
                 result += kits.get(k).getName();
                 if (k + 1 < kits.size())

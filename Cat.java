@@ -1,12 +1,11 @@
 import java.util.Random;
-
 /*
  * @author: Felix Taylor
  * Cat object
  */
 class Cat implements Sets {
     String name;
-    String eye = genEyes();
+    String eye = Util.genRandomWord(eyes);
     // 50/50 chance of either
     String gender = new Random().nextInt(2) == 1 ? "tom" : "she-cat";
     String fur = genFur();
@@ -18,9 +17,9 @@ class Cat implements Sets {
      */
     public Cat() {
         String pre;
-        String suff = Util.genNamePart(suffix); // generate suffix
+        String suff = Util.genRandomWord(suffix); // generate suffix
         do {
-            pre = Util.genNamePart(prefix);
+            pre = Util.genRandomWord(prefix);
         } // generate prefix
         while (pre.toLowerCase().equals(suff) || pre.length() + suff.length() > 10);
         // prefix and suffix can't be the same, and the name can't be more than 10
@@ -36,7 +35,7 @@ class Cat implements Sets {
      * such as "star" or "paw"
      */
     public Cat(String suffix) {
-        String pre = Util.genNamePart(prefix); // generate any prefix
+        String pre = Util.genRandomWord(prefix); // generate any prefix
         constHelper(pre, suffix); // things that both constructors do
     }
 
@@ -67,36 +66,13 @@ class Cat implements Sets {
     }
 
     /*
-     * Generates cat eye color
-     */
-    private static String genEyes() {
-        int num = new Random().nextInt(eyes.size());
-        int i = 0;
-        for (String eye : eyes) {
-            if (num == i) {
-                return eye;
-            }
-            i++;
-        }
-        return "green"; // default
-    }
-
-    /*
      * Generate fur color
      */
     private String genFur() {
-        int i = 0;
-        int num = new Random().nextInt(furs.size());
-        for (String fur : furs) {
-            if (i == num) {
-                // males cannot be tri-color cats
-                if (gender.equals("she-cat") || (!fur.contains("tortoiseshell") && !fur.contains("calico")))
-                    return fur;
-                else
-                    return genFur();
-            }
-            i++;
-        }
-        return "gray"; // default
+        String fur = Util.genRandomWord(furs);
+        // toms cannot be tricolor cats
+        if (gender.equals("she-cat") || (!fur.contains("tortoiseshell") && !fur.contains("calico")))
+            return fur;
+        return genFur();
     }
 }
