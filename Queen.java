@@ -4,7 +4,7 @@ import java.util.Random;
 public class Queen extends Cat {
 
     ArrayList<Cat> kits = new ArrayList<>();
-    
+
     public Queen() {
         super();
         gender = "she-cat";
@@ -33,7 +33,8 @@ public class Queen extends Cat {
             result += "\nKits: ";
             for (int k = 0; k < kits.size(); k++) {
                 result += kits.get(k).getName();
-                if (k + 1 < kits.size()) result += ", ";
+                if (k + 1 < kits.size())
+                    result += ", ";
             }
         }
         return result;

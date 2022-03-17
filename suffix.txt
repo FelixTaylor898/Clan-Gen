@@ -191,6 +191,7 @@ spot
 spots
 spring
 stalk
+break
 stare
 stem
 step

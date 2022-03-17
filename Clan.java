@@ -20,12 +20,12 @@ public class Clan implements Sets {
         warriors = new ArrayList<>();
         queens = new ArrayList<>();
         elders = new ArrayList<>();
-        // 5 to 10 warriors possible
+        // 5 to 8 warriors possible
         int warCount = 5 + rand.nextInt(6);
         for (int k = 0; k < warCount; k++)
             warriors.add(new Warrior());
-        // 0 to 3 queens possible
-        int queenCount = rand.nextInt(4);
+        // 0 to 2 queens possible
+        int queenCount = rand.nextInt(3);
         for (int k = 0; k < queenCount; k++)
             queens.add(new Queen());
         // 0 to 3 elders possible
@@ -41,18 +41,17 @@ public class Clan implements Sets {
     }
 
     private String buildString() {
-        return name + "Clan" + "\n\nLeader: " + leader.getDesc() +
-            "\n\nDeputy: " + deputy.getDesc() + 
-            "\n\nMedicine Cat: " + med.getDesc() + med.getApprenticeString() +
-            getWarriorsString()  + getApprenticeString() + buildQueenString() +
-            buildKitString() + buildElderString();
+        return name + "Clan" + "\nLeader: " + leader.toString() +
+                "\nDeputy: " + deputy.toString() +
+                "\nMedicine Cat: " + med.toString() + med.getApprenticeString() +
+                getWarriorsString() + getApprenticeString() + buildQueenString() +
+                buildKitString() + buildElderString();
     }
 
     private String getWarriorsString() {
         String result = "\n\nWarriors";
-        for (Warrior warrior : warriors) {
-            result += "\n" + warrior.getDesc() + warrior.getApprenticeName();
-        }
+        for (Warrior warrior : warriors)
+            result += "\n" + warrior.toString() + warrior.getApprenticeName();
         return result;
     }
 
@@ -62,7 +61,7 @@ public class Clan implements Sets {
         for (Warrior warrior : warriors) {
             if (warrior.hasApprentice()) {
                 appt = true;
-                result += "\n" + warrior.getApprentice().getDesc();
+                result += "\n" + warrior.getApprentice().toString();
             }
         }
         if (!appt) {
@@ -77,7 +76,7 @@ public class Clan implements Sets {
             result += "\nNone";
         } else {
             for (Queen queen : queens) {
-                result += "\n" + queen.getDesc() + queen.getKitsString();
+                result += "\n" + queen.toString() + queen.getKitsString();
             }
         }
         return result;
@@ -89,10 +88,11 @@ public class Clan implements Sets {
         for (Queen queen : queens) {
             for (Cat kit : queen.getKits()) {
                 kits = true;
-                result += "\n" + kit.getDesc();
+                result += "\n" + kit.toString();
             }
         }
-        if (!kits) result += "\nNone";
+        if (!kits)
+            result += "\nNone";
         return result;
     }
 
@@ -102,9 +102,9 @@ public class Clan implements Sets {
             result += "\nNone";
         } else {
             for (Cat elder : elders) {
-                result += "\n" + elder.getDesc();
+                result += "\n" + elder.toString();
             }
         }
         return result;
-    }  
+    }
 }

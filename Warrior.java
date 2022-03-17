@@ -1,8 +1,10 @@
 import java.util.Random;
+
 public class Warrior extends Cat {
     // A warrior is any cat who can have an apprentice
     // this includes medicine cats
     Cat apprentice = null;
+
     public Warrior() {
         super();
         // 25% chance of having an apprentice
@@ -27,12 +29,14 @@ public class Warrior extends Cat {
     }
 
     public String getApprenticeString() {
-        if (!hasApprentice()) return "";
-        return "\nApprentice: " + apprentice.getDesc();
+        if (!hasApprentice())
+            return "";
+        return "\nApprentice: " + apprentice.toString();
     }
 
     public String getApprenticeName() {
-        if (!hasApprentice()) return "";
+        if (!hasApprentice())
+            return "";
         return "\nApprentice: " + apprentice.getName();
     }
 }
