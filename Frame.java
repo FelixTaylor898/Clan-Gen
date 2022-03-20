@@ -19,6 +19,9 @@ class Frame {
         buttons = new JPanel(new GridLayout(0, 1));
         Font font = new Font("Arial", Font.PLAIN, 15);
         JTextArea textField = new JTextArea(new Clan().toString());
+        textField.setLineWrap(true);
+        textField.setWrapStyleWord(true);
+        textField.setSize(500, 500);
         JButton regen = new JButton("Generate");
         regen.setFocusable(false);
         regen.setBackground(new Color(137, 207, 240));

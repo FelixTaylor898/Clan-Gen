@@ -126,6 +126,7 @@ Pig
 Ostrich
 Emu
 Penguin
+Guinea
 Jungle
 Gator
 Crock
@@ -441,7 +442,6 @@ Gravity
 Gray
 Graze
 Green
-Griffin
 Grizzly
 Ground
 Grove
@@ -712,7 +712,7 @@ Primrose
 Puce
 Pumpkin
 Purple
-Raspberry
+Rasp
 Red
 Rose
 Ruby

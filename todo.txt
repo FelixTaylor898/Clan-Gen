@@ -1,2 +1,4 @@
-center jpanel
+make prettier
 add save option
+remove edit ability
+add more comments
