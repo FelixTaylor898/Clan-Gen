@@ -1,3 +1,6 @@
+cream
+ginger
+dark-ginger
 cream tabby
 ginger tabby
 dark-ginger tabby
@@ -34,15 +37,18 @@ dark brown-and-white
 brown-and-white tabby
 light brown-and-white tabby
 dark brown-and-white tabby
-ginger tortoiseshell
-dark ginger tortoiseshell
+tortoiseshell
+dark tortoiseshell
 cream tortoiseshell
-ginger tortoiseshell-and-white
-dark ginger tortoiseshell-and-white
+tortoiseshell-and-white
+dark tortoiseshell-and-white
 cream tortoiseshell-and-white
-ginger calico
-dark ginger calico
+calico
+dark calico
 cream calico
-ginger calico-and-white
+calico-and-white
 cream calico-and-white
-dark ginger calico-and-white
+dark calico-and-white
+cream-and-white
+ginger-and-white
+dark ginger-and-white

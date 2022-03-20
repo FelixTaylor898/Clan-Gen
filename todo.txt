@@ -1,2 +1,2 @@
-enable leaders and deputies to have apprentices
 center jpanel
+add save option

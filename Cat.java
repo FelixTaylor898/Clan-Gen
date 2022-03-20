@@ -18,8 +18,8 @@ class Cat implements Sets {
         do {
             pre = Util.genRandomWord(prefix);
         } // generate prefix
-        while (pre.toLowerCase().equals(suff) || pre.length() + suff.length() > 10);
-        // prefix and suffix can't be the same, and the name can't be more than 10
+        while (pre.toLowerCase().equals(suff) || pre.length() + suff.length() > 12);
+        // prefix and suffix can't be the same, and the name can't be more than 12
         // characters
         suffix.remove(suff); // suffix can't be used twice
         suffRemoved.add(suff); // so the suffix can be restored later

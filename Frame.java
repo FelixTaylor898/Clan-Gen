@@ -11,11 +11,9 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 class Frame {
     static JFrame frame;
     static JPanel panel, body, buttons;
-
 
     public Frame() {
         buttons = new JPanel(new GridLayout(0, 1));
@@ -38,10 +36,11 @@ class Frame {
         panel = new JPanel(new BorderLayout());
         panel.add(buttons, BorderLayout.NORTH);
         panel.add(body, BorderLayout.SOUTH);
-        if (frame != null) frame.dispose();
+        if (frame != null)
+            frame.dispose();
         frame = new JFrame("Clan Generator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setResizable(false);
+        frame.setResizable(false);
 
         JScrollPane scrollPane = new JScrollPane(panel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
@@ -49,8 +48,8 @@ class Frame {
         scrollPane.setPreferredSize(new Dimension(600, 600));
 
         frame.add(scrollPane);
-		frame.pack();
-        frame.setPreferredSize(new Dimension(650, 650));
-		frame.setVisible(true);
+        frame.pack();
+        frame.setPreferredSize(new Dimension(700, 700));
+        frame.setVisible(true);
     }
 }
