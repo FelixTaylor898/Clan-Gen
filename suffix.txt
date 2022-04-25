@@ -26,6 +26,7 @@ light
 magic
 fight
 snow
+fox
 pond
 rabbit
 squirrel

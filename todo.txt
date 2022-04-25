@@ -1,4 +1,5 @@
 make prettier
 add save option
-remove edit ability
 add more comments
+make scroll just bottom panel
+center jtextfield

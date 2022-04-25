@@ -33,6 +33,7 @@ class Frame {
             }
         });
         textField.setFont(font);
+        textField.setEditable(false);
         buttons.add(regen);
         body = new JPanel();
         body.add(textField);
@@ -43,7 +44,7 @@ class Frame {
             frame.dispose();
         frame = new JFrame("Clan Generator");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setResizable(false);
+        frame.setResizable(true);
 
         JScrollPane scrollPane = new JScrollPane(panel);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
