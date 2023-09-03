@@ -11,7 +11,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-class Frame {
+class Frame implements Sets {
     static JFrame frame;
     static JPanel panel, body, buttons;
 
